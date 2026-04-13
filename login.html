@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -10,36 +11,58 @@
 
   <div class="card-auth">
     <div class="logo-auth">
-      <img src="blobid0.png" alt="SportClub" style="width: 150px; height:56px; object-fit:contain; border-radius:50%;"><img>
+      <img src="blobid0.png" alt="SportClub" style="width: 150px; height:56px; object-fit:contain; border-radius:50%;">
       <p>Ingresa a tu cuenta</p>
     </div>
 
-    <form action="#" method="post">
-      <div class="form-group">
-        <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
-      </div>
+```
 
-      <div class="form-group">
-        <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
-      </div>
-
-      <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; padding:0.7rem;">
-        Ingresar
-      </button>
-    </form>
-
-    <div class="enlaces-auth" style="margin-top:1rem;">
-      <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
-    </div>
-    <div class="enlaces-auth" style="margin-top:0.5rem;">
-      ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
-    </div>
-    <div class="enlaces-auth" style="margin-top:0.75rem;">
-      <a href="index.html" style="color:#7a6a9b; font-weight:400;">← Volver al inicio</a>
-    </div>
+<form id="loginForm">
+  <div class="form-group">
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
   </div>
+
+  <div class="form-group">
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; padding:0.7rem;">
+    Ingresar
+  </button>
+</form>
+
+<div class="enlaces-auth" style="margin-top:1rem;">
+  <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+</div>
+<div class="enlaces-auth" style="margin-top:0.5rem;">
+  ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+</div>
+<div class="enlaces-auth" style="margin-top:0.75rem;">
+  <a href="index.html" style="color:#7a6a9b; font-weight:400;">← Volver al inicio</a>
+</div>
+```
+
+  </div>
+
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const user = document.getElementById("correo").value;
+      const pass = document.getElementById("contrasena").value;
+
+      if (user === "admin@admin.com") {
+        window.location.href = "dashboard-admin.html";
+      } else if (user === "coach@coach.com") {
+        window.location.href = "dashboard-coach.html";
+      } else {
+        window.location.href = "dashboard-user.html";
+      }
+    });
+  </script>
 
 </body>
 </html>
