@@ -1,11 +1,45 @@
-<div class="container">
-    <h2>Iniciar Sesión</h2>
-    <form>
-        <input type="email" placeholder="Correo"><br><br>
-        <input type="password" placeholder="Contraseña"><br><br>
-        <button>Ingresar</button>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión – SportClub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pagina-auth">
+
+  <div class="card-auth">
+    <div class="logo-auth">
+      <img src="blobid0.png" alt="SportClub" style="width: 150px; height:56px; object-fit:contain; border-radius:50%;"><img>
+      <p>Ingresa a tu cuenta</p>
+    </div>
+
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; padding:0.7rem;">
+        Ingresar
+      </button>
     </form>
 
-    <a href="recuperar.html">¿Olvidaste tu contraseña?</a><br>
-    <a href="registro.html">Registrarse</a>
-</div>
+    <div class="enlaces-auth" style="margin-top:1rem;">
+      <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+    </div>
+    <div class="enlaces-auth" style="margin-top:0.5rem;">
+      ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+    </div>
+    <div class="enlaces-auth" style="margin-top:0.75rem;">
+      <a href="index.html" style="color:#7a6a9b; font-weight:400;">← Volver al inicio</a>
+    </div>
+  </div>
+
+</body>
+</html>

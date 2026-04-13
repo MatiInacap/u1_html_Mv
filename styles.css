@@ -1,66 +1,459 @@
-/* RESET */
+/* =============================================
+   SPORTCLUB — styles.css
+   Colores corporativos:
+   Morado oscuro (principal) → #2E1A47
+   Amarillo / dorado (acento) → #F2B705
+   Blanco (base) → #FFFFFF
+   ============================================= */
+
+/* === RESET & BASE === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* VARIABLES */
-:root {
-    --primary: #2E1A47;
-    --accent: #F2B705;
-    --white: #FFFFFF;
-    --user: #007BFF;
-    --coach: #28A745;
-    --admin: #6F42C1;
-}
-
-/* GENERAL */
 body {
-    background-color: var(--white);
-    color: #333;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  color: #2E1A47;
+  background-color: #f4f1f8;
+  line-height: 1.6;
 }
 
+/* === TIPOGRAFÍA === */
+h1 { font-size: 2rem; font-weight: 700; }
+h2 { font-size: 1.5rem; font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; }
+p  { margin-bottom: 0.75rem; }
+
+/* === HEADER GENERAL === */
 header {
-    background: var(--primary);
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #2E1A47;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+header .logo-icon {
+  width: 42px;
+  height: 42px;
+  background-color: #F2B705;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2E1A47;
+}
+
+header h1, header h2 {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+}
+
+header span.subtitulo {
+  font-size: 0.8rem;
+  color: #F2B705;
+  display: block;
+  font-weight: 400;
+}
+
+header .header-acciones {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* === NAV GENERAL === */
 nav {
-    background: #eee;
-    padding: 10px;
+  background-color: #3d2460;
+  padding: 0.6rem 2rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav a {
-    margin-right: 15px;
-    text-decoration: none;
-    color: #333;
+  color: #e8d8ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
 }
 
+nav a:hover {
+  background-color: #F2B705;
+  color: #2E1A47;
+  font-weight: 600;
+}
+
+/* === BOTONES === */
+.btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:hover { opacity: 0.88; }
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background-color: #F2B705;
+  color: #2E1A47;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid #F2B705;
+}
+
+.btn-peligro {
+  background-color: #c0392b;
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #2E1A47;
+  border: 1.5px solid #2E1A47;
+}
+
+/* === LAYOUT CONTENEDOR === */
 .container {
-    padding: 20px;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
-button {
-    background: var(--accent);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+.container-wide {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
+/* === CARDS === */
 .card {
-    background: #f4f4f4;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #ddd0f0;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* DASHBOARD COLORES */
-.user header { background: var(--user); }
-.coach header { background: var(--coach); }
-.admin header { background: var(--admin); }
+.card h3 {
+  color: #2E1A47;
+  margin-bottom: 0.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-stat {
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #ddd0f0;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.card-stat .numero {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2E1A47;
+}
+
+.card-stat .etiqueta {
+  font-size: 0.85rem;
+  color: #7a6a9b;
+  margin-top: 0.25rem;
+}
+
+/* === FORMULARIOS === */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2E1A47;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #c9b8e8;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #2E1A47;
+  background: #FFFFFF;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2E1A47;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* === TABLAS === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+thead th {
+  background-color: #2E1A47;
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f4ff;
+}
+
+tbody td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #ece5f8;
+  color: #2E1A47;
+}
+
+/* === BADGE / ETIQUETA === */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge-usuario  { background: #dbeafe; color: #1e3a8a; }
+.badge-coach    { background: #dcfce7; color: #14532d; }
+.badge-admin    { background: #fce7f3; color: #831843; }
+
+/* === MENSAJES === */
+.mensaje-exito {
+  background: #dcfce7;
+  color: #14532d;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: none;
+}
+
+.mensaje-exito.visible {
+  display: block;
+}
+
+/* === SECCIÓN HERO (landing) === */
+.hero {
+  background: linear-gradient(135deg, #2E1A47 60%, #4a2e7a 100%);
+  color: #FFFFFF;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #F2B705;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  color: #e8d8ff;
+}
+
+.hero .btn-primary {
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+}
+
+/* === SECCIONES LANDING === */
+.seccion {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.seccion h2 {
+  color: #2E1A47;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #F2B705;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.beneficio-item {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border-left: 5px solid #F2B705;
+  border: 1px solid #ddd0f0;
+  border-left: 5px solid #F2B705;
+}
+
+.beneficio-item h3 {
+  color: #2E1A47;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.beneficio-item p {
+  font-size: 0.9rem;
+  color: #6b5c8a;
+  margin: 0;
+}
+
+/* === FOOTER === */
+footer {
+  background: #2E1A47;
+  color: #c9b8e8;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+footer span {
+  color: #F2B705;
+  font-weight: 600;
+}
+
+/* === PÁGINA DE AUTENTICACIÓN (centrada) === */
+.pagina-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2E1A47, #4a2e7a);
+  padding: 2rem;
+}
+
+.card-auth {
+  background: #FFFFFF;
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(46,26,71,0.18);
+}
+
+.card-auth .logo-auth {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.card-auth .logo-auth .logo-icon {
+  width: 56px;
+  height: 56px;
+  background-color: #F2B705;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #2E1A47;
+  margin-bottom: 0.5rem;
+}
+
+.card-auth .logo-auth h2 {
+  color: #2E1A47;
+  font-size: 1.4rem;
+}
+
+.card-auth .logo-auth p {
+  color: #7a6a9b;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.card-auth .enlaces-auth {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: #7a6a9b;
+}
+
+.card-auth .enlaces-auth a {
+  color: #2E1A47;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-auth .enlaces-auth a:hover {
+  color: #F2B705;
+}
+
+/* =============================================
+   DIFERENCIACIÓN VISUAL POR PERFIL
+   ============================================= */
+
+/* USUARIO → Azul */
+body.perfil-usuario header { background-color: #1a3a6e; }
+body.perfil-usuario nav    { background-color: #1e4a8a; }
+body.perfil-usuario nav a  { color: #bfdbfe; }
+body.perfil-usuario nav a:hover { background-color: #F2B705; color: #1a3a6e; }
+body.perfil-usuario .card  { border-left: 5px solid #2563eb; }
+body.perfil-usuario h3     { color: #1a3a6e; }
+
+/* COACH → Verde */
+body.perfil-coach header { background-color: #14532d; }
+body.perfil-coach nav    { background-color: #166534; }
+body.perfil-coach nav a  { color: #bbf7d0; }
+body.perfil-coach nav a:hover { background-color: #F2B705; color: #14532d; }
+body.perfil-coach .card  { border-left: 5px solid #16a34a; }
+body.perfil-coach h3     { color: #14532d; }
+body.perfil-coach thead th { background-color: #14532d; }
+
+/* ADMIN → Rojo / Morado */
+body.perfil-admin header { background-color: #7c1d1d; }
+body.perfil-admin nav    { background-color: #991b1b; }
+body.perfil-admin nav a  { color: #fecaca; }
+body.perfil-admin nav a:hover { background-color: #F2B705; color: #7c1d1d; }
+body.perfil-admin .card  { border-left: 5px solid #dc2626; }
+body.perfil-admin h3     { color: #7c1d1d; }
+body.perfil-admin thead th { background-color: #7c1d1d; }

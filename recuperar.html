@@ -1,6 +1,48 @@
-<div class="container">
-    <h2>Recuperar contraseña</h2>
-    <input type="email" placeholder="Correo"><br><br>
-    <button>Enviar</button>
-    <p>Se enviará un enlace a tu correo.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar contraseña – SportClub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pagina-auth">
+
+  <div class="card-auth">
+    <div class="logo-auth">
+      <img src="blobid0.png" alt="SportClub" style="width:56px; height:56px; object-fit:contain; border-radius:50%;"><img src="logo.png" alt="SportClub" style="width:56px; height:56px; object-fit:contain; border-radius:50%;">
+      <h2>SportClub</h2>
+      <p>Recupera el acceso a tu cuenta</p>
+    </div>
+
+    <!-- Mensaje de confirmación (se muestra al enviar) -->
+    <div class="mensaje-exito" id="msg-confirmacion">
+      ✔ Te enviamos un enlace a tu correo. Revisa tu bandeja de entrada (y la carpeta de spam).
+    </div>
+
+    <form id="form-recuperar" action="#" method="post">
+      <div class="form-group">
+        <label for="correo">Correo electrónico registrado</label>
+        <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; padding:0.7rem;">
+        Enviar enlace de recuperación
+      </button>
+    </form>
+
+    <div class="enlaces-auth" style="margin-top:1rem;">
+      <a href="login.html">← Volver al inicio de sesión</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('form-recuperar').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('msg-confirmacion').classList.add('visible');
+      this.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

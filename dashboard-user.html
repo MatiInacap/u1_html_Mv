@@ -1,29 +1,166 @@
-<body class="user">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Usuario – SportClub</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .progress-ring { position:relative; width:110px; height:110px; margin:0 auto; }
+    .progress-ring svg { transform:rotate(-90deg); }
+    .progress-ring .label {
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      font-size:1.1rem; font-weight:700; color:#1a3a6e;
+    }
+    .tabla-clases { width:100%; border-collapse:collapse; font-size:0.9rem; }
+    .tabla-clases th { background:#1a3a6e; color:#fff; padding:0.55rem 0.75rem; text-align:left; }
+    .tabla-clases td { padding:0.55rem 0.75rem; border-bottom:1px solid #dbeafe; }
+    .tabla-clases tr:hover td { background:#eff6ff; }
+    .objetivo-item { display:flex; align-items:center; gap:0.5rem; padding:0.3rem 0; font-size:0.88rem; color:#1a3a6e; }
+    .objetivo-item::before { content:''; display:inline-block; width:8px; height:8px; border-radius:50%; background:#2563eb; flex-shrink:0; }
+  </style>
+</head>
+<body class="perfil-usuario">
 
-    <header>
-        <h2>SportClub Usuario</h2>
-        <div>
-            <button>Editar Perfil</button>
-            <button>Cerrar Sesión</button>
-        </div>
-    </header>
-    
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Reservas</a>
-        <a href="#">Perfil</a>
-    </nav>
-    
-    <div class="container">
-        <h3>Bienvenido Juan</h3>
-        <p>Correo: juan@email.com</p>
-    
-        <h3>Reservas</h3>
-        <div class="card">Crossfit - Lunes 18:00</div>
-    
-        <h3>Clases disponibles</h3>
-        <div class="card">Yoga</div>
-        <div class="card">Spinning</div>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="SportClub" style="width:42px;height:42px;object-fit:contain;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="logo-icon" style="display:none;">SC</div>
+      <div>
+        <h2>SportClub</h2>
+        <span class="subtitulo">Dashboard Usuario</span>
+      </div>
     </div>
-    
-    </body>
+    <div class="header-acciones">
+      <button class="btn btn-secondary">Editar Perfil</button>
+      <a href="login.html" class="btn btn-peligro">Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Clases</a>
+    <a href="#">Reservas</a>
+    <a href="#">Mi Progreso</a>
+  </nav>
+
+  <main class="container-wide">
+    <h2 style="margin:1.5rem 0 1rem; color:#1a3a6e;">Bienvenido a SportClub</h2>
+
+    <!-- FILA: Perfil | Progreso | Clases rápidas -->
+    <div style="display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:1.25rem; margin-bottom:1.25rem;">
+
+      <div class="card">
+        <h3>Mi Perfil</h3>
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+          <div style="width:52px;height:52px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-weight:700;color:#1e3a8a;font-size:1.1rem;flex-shrink:0;">JG</div>
+          <div>
+            <p style="margin:0;font-weight:600;color:#1a3a6e;">Juan González</p>
+            <p style="margin:0;font-size:0.82rem;color:#5a7db5;">juan@email.com</p>
+          </div>
+        </div>
+        <p style="font-size:0.85rem;font-weight:600;color:#1a3a6e;margin-bottom:0.4rem;">Objetivos Personales:</p>
+        <div class="objetivo-item">Bajar 5 kg en 3 meses</div>
+        <div class="objetivo-item">Mejorar resistencia cardiovascular</div>
+        <div class="objetivo-item">Asistir 3 veces por semana</div>
+      </div>
+
+      <div class="card" style="text-align:center;">
+        <h3>Progreso</h3>
+        <div class="progress-ring">
+          <svg width="110" height="110" viewBox="0 0 110 110">
+            <circle cx="55" cy="55" r="46" fill="none" stroke="#dbeafe" stroke-width="12"/>
+            <circle cx="55" cy="55" r="46" fill="none" stroke="#2563eb" stroke-width="12"
+              stroke-dasharray="289" stroke-dashoffset="87" stroke-linecap="round"/>
+          </svg>
+          <div class="label">70%</div>
+        </div>
+        <p style="font-size:0.85rem;color:#5a7db5;margin-top:0.5rem;">Avance del mes</p>
+        <div style="margin-top:0.75rem;text-align:left;">
+          <div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.3rem;">
+            <span style="color:#5a7db5;">Clases asistidas</span><strong style="color:#1a3a6e;">12 / 16</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.3rem;">
+            <span style="color:#5a7db5;">Reservas activas</span><strong style="color:#1a3a6e;">3</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.82rem;">
+            <span style="color:#5a7db5;">Racha actual</span><strong style="color:#1a3a6e;">5 días</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Clases Disponibles</h3>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.25rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;background:#eff6ff;border-radius:6px;padding:0.5rem 0.75rem;">
+            <span style="font-size:0.88rem;font-weight:600;color:#1a3a6e;">Spinning</span>
+            <button class="btn btn-primary" style="font-size:0.78rem;padding:0.25rem 0.65rem;">Reservar</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;background:#eff6ff;border-radius:6px;padding:0.5rem 0.75rem;">
+            <span style="font-size:0.88rem;font-weight:600;color:#1a3a6e;">CrossFit</span>
+            <button class="btn btn-primary" style="font-size:0.78rem;padding:0.25rem 0.65rem;">Reservar</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;background:#eff6ff;border-radius:6px;padding:0.5rem 0.75rem;">
+            <span style="font-size:0.88rem;font-weight:600;color:#1a3a6e;">Viernes</span>
+            <button class="btn btn-primary" style="font-size:0.78rem;padding:0.25rem 0.65rem;">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TABLA CLASES -->
+    <div class="card">
+      <h3>Clases Disponibles</h3>
+      <table class="tabla-clases">
+        <thead>
+          <tr>
+            <th>Clase</th>
+            <th>Día</th>
+            <th>Hora</th>
+            <th>Tipo</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Spinning</strong></td>
+            <td>Lunes / Viernes</td>
+            <td>18:00 / 10:00</td>
+            <td>Presencial</td>
+            <td><button class="btn btn-primary" style="font-size:0.8rem;padding:0.3rem 0.8rem;">Reservar</button></td>
+          </tr>
+          <tr>
+            <td><strong>CrossFit</strong></td>
+            <td>Miércoles</td>
+            <td>10:00</td>
+            <td>Presencial</td>
+            <td><button class="btn btn-primary" style="font-size:0.8rem;padding:0.3rem 0.8rem;">Reservar</button></td>
+          </tr>
+          <tr>
+            <td><strong>Boxeo</strong></td>
+            <td>Sábado</td>
+            <td>10:00</td>
+            <td>Presencial</td>
+            <td><button class="btn btn-primary" style="font-size:0.8rem;padding:0.3rem 0.8rem;">Reservar</button></td>
+          </tr>
+          <tr>
+            <td><strong>HIIT</strong></td>
+            <td>Martes / Jueves</td>
+            <td>07:30</td>
+            <td>Presencial</td>
+            <td><button class="btn btn-primary" style="font-size:0.8rem;padding:0.3rem 0.8rem;">Reservar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <span>SportClub</span> – Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>

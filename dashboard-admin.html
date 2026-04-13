@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Administrador – SportClub</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .tabla-usuarios { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    .tabla-usuarios th { background:#7c1d1d; color:#fff; padding:0.55rem 0.75rem; text-align:left; }
+    .tabla-usuarios td { padding:0.55rem 0.75rem; border-bottom:1px solid #fecaca; vertical-align:middle; }
+    .tabla-usuarios tr:hover td { background:#fff5f5; }
+    .buscador { display:flex; gap:0.5rem; margin-bottom:1rem; }
+    .buscador input { flex:1; padding:0.5rem 0.75rem; border:1.5px solid #fecaca; border-radius:6px; font-size:0.9rem; color:#7c1d1d; }
+    .buscador input:focus { outline:none; border-color:#7c1d1d; }
+    .buscador button { padding:0.5rem 0.9rem; background:#7c1d1d; color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:0.9rem; }
+    .reporte-item { display:flex; justify-content:space-between; align-items:center; padding:0.6rem 0; border-bottom:1px solid #fecaca; }
+    .reporte-item:last-child { border-bottom:none; }
+  </style>
+</head>
+<body class="perfil-admin">
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="SportClub" style="width:42px;height:42px;object-fit:contain;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="logo-icon" style="display:none;">SC</div>
+      <div>
+        <h2>SportClub</h2>
+        <span class="subtitulo">Dashboard Administrador</span>
+      </div>
+    </div>
+    <div class="header-acciones">
+      <button class="btn btn-secondary">Editar Perfil</button>
+      <a href="login.html" class="btn btn-peligro">Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Usuarios</a>
+    <a href="#">Estadísticas</a>
+    <a href="#">Configuración</a>
+  </nav>
+
+  <main class="container-wide">
+    <h2 style="margin:1.5rem 0 1.25rem; color:#7c1d1d;">Panel de Administración</h2>
+
+    <!-- 3 columnas principales -->
+    <div style="display:grid; grid-template-columns:1.4fr 1.2fr 1fr; gap:1.25rem;">
+
+      <!-- Gestión de Usuarios -->
+      <div class="card">
+        <h3>Gestión de Usuarios</h3>
+        <div class="buscador">
+          <input type="text" id="buscador" placeholder="Buscar..." oninput="filtrarUsuarios()">
+          <button onclick="filtrarUsuarios()">&#128269;</button>
+        </div>
+        <table class="tabla-usuarios" id="tabla-usuarios">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-usuarios">
+            <tr>
+              <td>Juan González</td>
+              <td>juan@email.com</td>
+              <td><span class="badge badge-usuario">Usuario</span></td>
+              <td><button class="btn btn-outline" style="font-size:0.75rem;padding:0.2rem 0.6rem;color:#7c1d1d;border-color:#7c1d1d;">Editar</button></td>
+            </tr>
+            <tr>
+              <td>María Soto</td>
+              <td>maria@email.com</td>
+              <td><span class="badge badge-usuario">Usuario</span></td>
+              <td><button class="btn btn-outline" style="font-size:0.75rem;padding:0.2rem 0.6rem;color:#7c1d1d;border-color:#7c1d1d;">Editar</button></td>
+            </tr>
+            <tr>
+              <td>Pedro Ramírez</td>
+              <td>pedro@sportclub.cl</td>
+              <td><span class="badge badge-coach">Coach</span></td>
+              <td><button class="btn btn-outline" style="font-size:0.75rem;padding:0.2rem 0.6rem;color:#7c1d1d;border-color:#7c1d1d;">Editar</button></td>
+            </tr>
+            <tr>
+              <td>Andrea López</td>
+              <td>andrea@sportclub.cl</td>
+              <td><span class="badge badge-coach">Coach</span></td>
+              <td><button class="btn btn-outline" style="font-size:0.75rem;padding:0.2rem 0.6rem;color:#7c1d1d;border-color:#7c1d1d;">Editar</button></td>
+            </tr>
+            <tr>
+              <td>Carlos Vega</td>
+              <td>carlos@email.com</td>
+              <td><span class="badge badge-usuario">Usuario</span></td>
+              <td><button class="btn btn-outline" style="font-size:0.75rem;padding:0.2rem 0.6rem;color:#7c1d1d;border-color:#7c1d1d;">Editar</button></td>
+            </tr>
+            <tr>
+              <td>Admin General</td>
+              <td>admin@sportclub.cl</td>
+              <td><span class="badge badge-admin">Admin</span></td>
+              <td><button class="btn btn-outline" style="font-size:0.75rem;padding:0.2rem 0.6rem;color:#7c1d1d;border-color:#7c1d1d;">Editar</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-outline" style="margin-top:0.75rem;width:100%;color:#7c1d1d;border-color:#7c1d1d;">+ Agregar usuario</button>
+      </div>
+
+      <!-- Estadísticas del Sistema -->
+      <div class="card">
+        <h3>Estadísticas del Sistema</h3>
+        <div class="card-grid" style="grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+          <div class="card-stat">
+            <div class="numero" style="color:#7c1d1d;">120</div>
+            <div class="etiqueta">Usuarios totales</div>
+          </div>
+          <div class="card-stat">
+            <div class="numero" style="color:#7c1d1d;">80</div>
+            <div class="etiqueta">Activos</div>
+          </div>
+          <div class="card-stat">
+            <div class="numero" style="color:#7c1d1d;">35</div>
+            <div class="etiqueta">Total clases</div>
+          </div>
+          <div class="card-stat">
+            <div class="numero" style="color:#7c1d1d;">10</div>
+            <div class="etiqueta">Clases hoy</div>
+          </div>
+        </div>
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:0.45rem 0;border-bottom:1px solid #fecaca;display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:#9a5a5a;">Coaches registrados</span><strong>5</strong>
+          </li>
+          <li style="padding:0.45rem 0;border-bottom:1px solid #fecaca;display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:#9a5a5a;">Reservas del mes</span><strong>248</strong>
+          </li>
+          <li style="padding:0.45rem 0;border-bottom:1px solid #fecaca;display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:#9a5a5a;">Nuevos usuarios</span><strong>14</strong>
+          </li>
+          <li style="padding:0.45rem 0;display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:#9a5a5a;">Tasa de asistencia</span><strong>78%</strong>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Reportes Generales -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem;">
+        <div class="card">
+          <h3>Reportes Generales</h3>
+          <div class="reporte-item">
+            <div>
+              <p style="margin:0;font-size:0.88rem;font-weight:600;color:#7c1d1d;">Informe Mensual</p>
+              <p style="margin:0;font-size:0.78rem;color:#9a5a5a;">Abril 2025</p>
+            </div>
+            <button class="btn btn-outline" style="font-size:0.78rem;padding:0.25rem 0.65rem;color:#7c1d1d;border-color:#7c1d1d;">Descargar</button>
+          </div>
+          <div class="reporte-item">
+            <div>
+              <p style="margin:0;font-size:0.88rem;font-weight:600;color:#7c1d1d;">Informe Mensual</p>
+              <p style="margin:0;font-size:0.78rem;color:#9a5a5a;">Marzo 2025</p>
+            </div>
+            <button class="btn btn-outline" style="font-size:0.78rem;padding:0.25rem 0.65rem;color:#7c1d1d;border-color:#7c1d1d;">Descargar</button>
+          </div>
+          <div class="reporte-item">
+            <div>
+              <p style="margin:0;font-size:0.88rem;font-weight:600;color:#7c1d1d;">Reporte de Asistencia</p>
+              <p style="margin:0;font-size:0.78rem;color:#9a5a5a;">Semana actual</p>
+            </div>
+            <button class="btn btn-outline" style="font-size:0.78rem;padding:0.25rem 0.65rem;color:#7c1d1d;border-color:#7c1d1d;">Descargar</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Configuración</h3>
+          <div style="display:flex;flex-direction:column;gap:0.6rem;">
+            <button class="btn btn-outline" style="color:#7c1d1d;border-color:#7c1d1d;text-align:left;padding:0.6rem 0.9rem;font-size:0.88rem;">&#9881; Configurar sistema</button>
+            <button class="btn btn-outline" style="color:#7c1d1d;border-color:#7c1d1d;text-align:left;padding:0.6rem 0.9rem;font-size:0.88rem;">&#128197; Gestionar horarios</button>
+            <button class="btn btn-outline" style="color:#7c1d1d;border-color:#7c1d1d;text-align:left;padding:0.6rem 0.9rem;font-size:0.88rem;">&#128276; Notificaciones</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <span>SportClub</span> – Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function filtrarUsuarios() {
+      const texto = document.getElementById('buscador').value.toLowerCase();
+      const filas = document.querySelectorAll('#tbody-usuarios tr');
+      filas.forEach(fila => {
+        fila.style.display = fila.textContent.toLowerCase().includes(texto) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

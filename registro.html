@@ -1,10 +1,53 @@
-<div class="container">
-    <h2>Registro</h2>
-    <form>
-        <input type="text" placeholder="Nombre"><br><br>
-        <input type="email" placeholder="Correo"><br><br>
-        <input type="password" placeholder="Contraseña"><br><br>
-        <textarea placeholder="Información adicional"></textarea><br><br>
-        <button>Registrar</button>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro – SportClub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pagina-auth">
+
+  <div class="card-auth" style="max-width:460px;">
+    <div class="logo-auth">
+      <img src="blobid0.png" alt="SportClub" style="width:56px; height:56px; object-fit:contain; border-radius:50%;"><img src="logo.png" alt="SportClub" style="width:56px; height:56px; object-fit:contain; border-radius:50%;">
+      <h2>SportClub</h2>
+      <p>Crea tu cuenta gratis</p>
+    </div>
+
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required>
+      </div>
+
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Mínimo 8 caracteres" required>
+      </div>
+
+      <div class="form-group">
+        <label for="info">Información adicional <span style="font-weight:400; color:#7a6a9b;">(opcional)</span></label>
+        <textarea id="info" name="info" placeholder="Ej: deporte favorito, objetivo de entrenamiento..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; padding:0.7rem;">
+        Registrarse
+      </button>
     </form>
-</div>
+
+    <div class="enlaces-auth" style="margin-top:1rem;">
+      ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+    </div>
+    <div class="enlaces-auth" style="margin-top:0.75rem;">
+      <a href="index.html" style="color:#7a6a9b; font-weight:400;">← Volver al inicio</a>
+    </div>
+  </div>
+
+</body>
+</html>
