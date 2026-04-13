@@ -1,12 +1,4 @@
-/* =============================================
-   SPORTCLUB — styles.css
-   Colores corporativos:
-   Morado oscuro (principal) → #2E1A47
-   Amarillo / dorado (acento) → #F2B705
-   Blanco (base) → #FFFFFF
-   ============================================= */
 
-/* === RESET & BASE === */
 * {
   margin: 0;
   padding: 0;
@@ -21,13 +13,13 @@ body {
   line-height: 1.6;
 }
 
-/* === TIPOGRAFÍA === */
+
 h1 { font-size: 2rem; font-weight: 700; }
 h2 { font-size: 1.5rem; font-weight: 600; }
 h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; }
 p  { margin-bottom: 0.75rem; }
 
-/* === HEADER GENERAL === */
+
 header {
   background-color: #2E1A47;
   color: #FFFFFF;
@@ -74,7 +66,7 @@ header .header-acciones {
   align-items: center;
 }
 
-/* === NAV GENERAL === */
+
 nav {
   background-color: #3d2460;
   padding: 0.6rem 2rem;
@@ -97,7 +89,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* === BOTONES === */
+
 .btn {
   padding: 0.5rem 1.2rem;
   border: none;
@@ -133,7 +125,7 @@ nav a:hover {
   border: 1.5px solid #2E1A47;
 }
 
-/* === LAYOUT CONTENEDOR === */
+
 .container {
   max-width: 960px;
   margin: 2rem auto;
@@ -146,7 +138,7 @@ nav a:hover {
   padding: 0 1.5rem;
 }
 
-/* === CARDS === */
+
 .card {
   background: #FFFFFF;
   border-radius: 10px;
@@ -187,7 +179,7 @@ nav a:hover {
   margin-top: 0.25rem;
 }
 
-/* === FORMULARIOS === */
+
 .form-group {
   margin-bottom: 1.25rem;
 }
@@ -224,7 +216,7 @@ nav a:hover {
   min-height: 90px;
 }
 
-/* === TABLAS === */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -249,7 +241,7 @@ tbody td {
   color: #2E1A47;
 }
 
-/* === BADGE / ETIQUETA === */
+
 .badge {
   display: inline-block;
   padding: 0.2rem 0.7rem;
@@ -262,7 +254,7 @@ tbody td {
 .badge-coach    { background: #dcfce7; color: #14532d; }
 .badge-admin    { background: #fce7f3; color: #831843; }
 
-/* === MENSAJES === */
+
 .mensaje-exito {
   background: #dcfce7;
   color: #14532d;
@@ -278,7 +270,7 @@ tbody td {
   display: block;
 }
 
-/* === SECCIÓN HERO (landing) === */
+
 .hero {
   background: linear-gradient(135deg, #2E1A47 60%, #4a2e7a 100%);
   color: #FFFFFF;
@@ -304,7 +296,7 @@ tbody td {
   padding: 0.75rem 2rem;
 }
 
-/* === SECCIONES LANDING === */
+
 .seccion {
   padding: 3rem 2rem;
   max-width: 900px;
@@ -347,7 +339,7 @@ tbody td {
   margin: 0;
 }
 
-/* === FOOTER === */
+
 footer {
   background: #2E1A47;
   color: #c9b8e8;
@@ -362,7 +354,7 @@ footer span {
   font-weight: 600;
 }
 
-/* === PÁGINA DE AUTENTICACIÓN (centrada) === */
+
 .pagina-auth {
   min-height: 100vh;
   display: flex;
@@ -428,11 +420,8 @@ footer span {
   color: #F2B705;
 }
 
-/* =============================================
-   DIFERENCIACIÓN VISUAL POR PERFIL
-   ============================================= */
 
-/* USUARIO → Azul */
+
 body.perfil-usuario header { background-color: #1a3a6e; }
 body.perfil-usuario nav    { background-color: #1e4a8a; }
 body.perfil-usuario nav a  { color: #bfdbfe; }
@@ -440,7 +429,7 @@ body.perfil-usuario nav a:hover { background-color: #F2B705; color: #1a3a6e; }
 body.perfil-usuario .card  { border-left: 5px solid #2563eb; }
 body.perfil-usuario h3     { color: #1a3a6e; }
 
-/* COACH → Verde */
+
 body.perfil-coach header { background-color: #14532d; }
 body.perfil-coach nav    { background-color: #166534; }
 body.perfil-coach nav a  { color: #bbf7d0; }
@@ -449,7 +438,7 @@ body.perfil-coach .card  { border-left: 5px solid #16a34a; }
 body.perfil-coach h3     { color: #14532d; }
 body.perfil-coach thead th { background-color: #14532d; }
 
-/* ADMIN → Rojo / Morado */
+
 body.perfil-admin header { background-color: #7c1d1d; }
 body.perfil-admin nav    { background-color: #991b1b; }
 body.perfil-admin nav a  { color: #fecaca; }
